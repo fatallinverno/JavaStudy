@@ -1,10 +1,9 @@
-package ch01.sec08;
+package ch01.sec02;
 
 /*
  * 장제목 : 1 자바 시작하기
  * 작성일 : 2024.04.15
  * */
-
 
 public class Calculator {
 

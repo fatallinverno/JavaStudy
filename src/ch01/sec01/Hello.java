@@ -1,11 +1,11 @@
-package ch01.sec08;
+package ch01.sec01;
 
 /*
-* 장제목 : 1 자바 시작하기
-* 작성일 : 2024.04.15
-* */
+ * 장제목 : 1 자바 시작하기
+ * 작성일 : 2024.04.15
+ * */
 
-public class Hello { //Hello 클래스명 = 소스파일명
+public class Hello {
 
     //프로그램 진입점
     public static void main(String[] args) { // main 메소드명
