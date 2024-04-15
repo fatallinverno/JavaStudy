@@ -9,7 +9,9 @@ package ch02.sec03;
  * */
 
 public class Char {
+
     public static void main(String[] args) {
+
         char c1 = 'A';      //문자 저장
         char c2 = 65;       //유니코드 직접 저장
         
@@ -20,5 +22,7 @@ public class Char {
         System.out.println(c2);
         System.out.println(c3);
         System.out.println(c4);
+
     }
+
 }
