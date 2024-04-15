@@ -9,7 +9,9 @@ package ch02.sec01;
  * */
 
 public class VariableInitialization {
+
     public static void main(String[] args) {
+
         //변수 value 선언
         int value;
 
@@ -19,4 +21,5 @@ public class VariableInitialization {
         //변수 result 값을 읽고 콘솔에 출력
 //        System.out.println(result);
     }
+
 }
