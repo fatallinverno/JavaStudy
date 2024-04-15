@@ -6,7 +6,9 @@ package ch02.sec02;
  * */
 
 public class Byte {
+
     public static void main(String[] args) {
+
         byte var1 = -128;
         byte var2 = -30;
         byte var3 = 0;
@@ -19,5 +21,7 @@ public class Byte {
         System.out.println(var3);
         System.out.println(var4);
         System.out.println(var5);
+
     }
+
 }
