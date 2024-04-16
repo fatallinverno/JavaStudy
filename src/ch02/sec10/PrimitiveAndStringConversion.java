@@ -4,7 +4,7 @@ package ch02.sec10;
  * 장제목 : 2-10 문자열을 기본 타입으로 변환
  * 작석일 : 2024.04.16
  *
- * valueOf 메소드는 boolean, char, int  같은 다양한 타입의 값을 문자열로 변환해주는 메소드
+ * valueOf 메소드는 boolean, char, int  같은 다양한 타입의 값을 문자열로 변환해주는 메소드.
  * */
 
 public class PrimitiveAndStringConversion {
