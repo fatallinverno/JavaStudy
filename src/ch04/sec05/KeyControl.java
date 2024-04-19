@@ -1,7 +1,9 @@
 package ch04.sec05;
 
-/*조건식에 true를 사용하면 while(true) {...}가 되어서 무한 반복하게 된다.
-이 경우 언젠가는 while 문을 빠져나가기 위한 코드가 필요하다.*/
+/*
+조건식에 true를 사용하면 while(true) {...}가 되어서 무한 반복하게 된다
+이 경우 언젠가는 while 문을 빠져나가기 위한 코드가 필요하다
+*/
 
 import java.util.Scanner;
 
