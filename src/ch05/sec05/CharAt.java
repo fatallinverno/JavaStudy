@@ -12,8 +12,8 @@ package ch05.sec05;
 public class CharAt {
     public static void main(String[] args) {
         String ssn = "9506241230123";
-        char gender = ssn.charAt(6);
-        switch (gender) {
+        char sex = ssn.charAt(6);
+        switch (sex) {
             case '1':
             case '3':
                 System.out.println("남자 입니다.");
