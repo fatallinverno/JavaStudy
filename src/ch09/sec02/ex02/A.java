@@ -2,7 +2,7 @@ package ch09.sec02.ex02;
 
 public class A {
     //인스턴스 멤버 클래스
-    Class B {
+    class B {
         //인스턴스 필드
         int field1 = 1;
 
