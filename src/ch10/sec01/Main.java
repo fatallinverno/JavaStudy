@@ -1,4 +1,4 @@
-package ch10;
+package ch10.sec01;
 
 import pack1.A;
 import pack2.B;
