@@ -23,6 +23,5 @@ public class DateTimeOperationEx {
 
         LocalDateTime result3 = now.plusDays(7);
         System.out.println("7일 덧셈 : " + result3.format(dtf));
-
     }
 }
