@@ -35,6 +35,5 @@ public class DateTimeCompareEx {
         System.out.println("남은 시간 : " + remainHour);
         System.out.println("남은 분 : " + remainMinute);
         System.out.println("남은 초 : " + remainSecond);
-
     }
 }
