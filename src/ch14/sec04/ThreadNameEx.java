@@ -1,4 +1,4 @@
-package ch14.ch04;
+package ch14.sec04;
 
 /*
  * 장제목 : 14-4 스레드 이름
