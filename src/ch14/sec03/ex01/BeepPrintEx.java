@@ -1,4 +1,4 @@
-package ch14.ch03.ex01;
+package ch14.sec03.ex01;
 
 /*
  * 장제목 : 14-3 작업 스레드 생성과 실행

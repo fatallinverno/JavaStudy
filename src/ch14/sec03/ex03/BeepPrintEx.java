@@ -1,4 +1,4 @@
-package ch14.ch03.ex03;
+package ch14.sec03.ex03;
 
 import java.awt.*;
 
