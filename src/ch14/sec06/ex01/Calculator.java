@@ -19,8 +19,7 @@ public class Calculator {
         this.memory = memory;
         try {
             Thread.sleep(2000);
-        } catch (InterruptedException e) {
-        }
+        } catch (InterruptedException e) {}
         System.out.println(Thread.currentThread().getName() + ": " + memory);
     }
 
@@ -29,8 +28,7 @@ public class Calculator {
             this.memory = memory;
             try {
                 Thread.sleep(2000);
-            } catch (InterruptedException e) {
-            }
+            } catch (InterruptedException e) {}
             System.out.println(Thread.currentThread().getName() + ": " + memory);
         }
     }
