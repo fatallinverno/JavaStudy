@@ -3,40 +3,39 @@
 ```mermaid
 erDiagram
     Document {
-        BIGINT document_id PK "전자문서 ID"
-        VARCHAR file_name "저장된 파일 이름"
-        VARCHAR file_type "파일 유형"
-        BIGINT category_id FK "분류코드 ID"
-        ENUM document_type "문서 유형 (회계전표/전자책)"
-        DATETIME created_at "생성 일시"
+        BIGINT document_id PK
+        VARCHAR file_name
+        VARCHAR file_type
+        BIGINT category_id FK
+        ENUM document_type
+        DATETIME created_at
     }
 
     AccountingSlip {
-        BIGINT slip_id PK "회계전표 ID"
-        BIGINT document_id FK UNIQUE "문서 ID"
-        DATE date "날짜"
-        VARCHAR description "적요"
-        DECIMAL income "수입"
-        DECIMAL expense "지출"
-        TEXT note "비고"
+        BIGINT slip_id PK
+        BIGINT document_id FK
+        DATE date
+        VARCHAR description
+        DECIMAL income
+        DECIMAL expense
+        TEXT note
     }
 
     EBook {
-        BIGINT ebook_id PK "전자책 ID"
-        BIGINT document_id FK UNIQUE "문서 ID"
-        VARCHAR title "제목"
-        VARCHAR author "저자"
-        VARCHAR publisher "출판사"
+        BIGINT ebook_id PK
+        BIGINT document_id FK
+        VARCHAR title
+        VARCHAR author
+        VARCHAR publisher
     }
 
     Category {
-        BIGINT category_id PK "분류코드 ID"
-        VARCHAR main_category "대분류"
-        VARCHAR mid_category "중분류"
-        VARCHAR sub_category "소분류"
+        BIGINT category_id PK
+        VARCHAR main_category
+        VARCHAR mid_category
+        VARCHAR sub_category
     }
 
-    Document ||--o{ AccountingSlip : "has"
-    Document ||--o{ EBook : "has"
-    Document }o--|| Category : "belongs to"
-
+    Document ||--|| AccountingSlip : has
+    Document ||--|| EBook : has
+    Document }o--|| Category : "categorized by"
