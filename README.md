@@ -2,40 +2,41 @@
 
 ```mermaid
 erDiagram
-    CATEGORY ||--o{ DOCUMENT : "분류_됨"
-
-    DOCUMENT ||--o{ ACCOUNTSLIP : "is_a"
-    DOCUMENT ||--o{ EBOOK : "is_a"
-
-    DOCUMENT {
-        int DocumentID PK
-        varchar FileName
-        int SerialNumber
-        varchar FileType
-        date UploadDate
-        int FileSize
-        int CategoryID FK
+    Document {
+        BIGINT document_id PK "전자문서 ID"
+        VARCHAR file_name "저장된 파일 이름"
+        VARCHAR file_type "파일 유형"
+        BIGINT category_id FK "분류코드 ID"
+        ENUM document_type "문서 유형 (회계전표/전자책)"
+        DATETIME created_at "생성 일시"
     }
 
-    ACCOUNTSLIP {
-        int DocumentID PK,FK
-        date SlipDate
-        text Description
-        decimal Income
-        decimal Expense
-        text Remarks
+    AccountingSlip {
+        BIGINT slip_id PK "회계전표 ID"
+        BIGINT document_id FK UNIQUE "문서 ID"
+        DATE date "날짜"
+        VARCHAR description "적요"
+        DECIMAL income "수입"
+        DECIMAL expense "지출"
+        TEXT note "비고"
     }
 
-    EBOOK {
-        int DocumentID PK,FK
-        varchar Title
-        varchar Author
-        varchar Publisher
+    EBook {
+        BIGINT ebook_id PK "전자책 ID"
+        BIGINT document_id FK UNIQUE "문서 ID"
+        VARCHAR title "제목"
+        VARCHAR author "저자"
+        VARCHAR publisher "출판사"
     }
 
-    CATEGORY {
-        int CategoryID PK
-        varchar LargeCategory
-        varchar MiddleCategory
-        varchar SmallCategory
+    Category {
+        BIGINT category_id PK "분류코드 ID"
+        VARCHAR main_category "대분류"
+        VARCHAR mid_category "중분류"
+        VARCHAR sub_category "소분류"
     }
+
+    Document ||--o{ AccountingSlip : "has"
+    Document ||--o{ EBook : "has"
+    Document }o--|| Category : "belongs to"
+
