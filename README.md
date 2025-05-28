@@ -1,4 +1,4 @@
-'''merried
+```mermaid
 erDiagram
     CATEGORY ||--o{ DOCUMENT : "분류_됨"
 
