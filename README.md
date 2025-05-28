@@ -3,39 +3,34 @@
 ```mermaid
 erDiagram
     Document {
-        BIGINT document_id PK "전자문서 ID"
-        VARCHAR file_name "파일 이름"
-        VARCHAR file_type "파일 유형"
-        BIGINT category_id FK "분류코드 ID"
-        ENUM document_type "문서 유형"
-        DATETIME created_at "생성 일시"
+        BIGINT document_id PK "문서 ID"
+        VARCHAR title "문서 제목"
+        VARCHAR main_category_code FK "대분류 코드"
+        VARCHAR mid_category_code FK "중분류 코드"
+        VARCHAR sub_category_code FK "소분류 코드"
     }
 
-    AccountingSlip {
-        BIGINT slip_id PK "회계전표 ID"
-        BIGINT document_id FK "전자문서 ID"
-        DATE date "날짜"
-        VARCHAR description "적요"
-        DECIMAL income "수입"
-        DECIMAL expense "지출"
-        TEXT note "비고"
+    MainCategory {
+        VARCHAR main_category_code PK "대분류 코드"
+        VARCHAR name "대분류명"
     }
 
-    EBook {
-        BIGINT ebook_id PK "전자책 ID"
-        BIGINT document_id FK "전자문서 ID"
-        VARCHAR title "제목"
-        VARCHAR author "저자"
-        VARCHAR publisher "출판사"
+    MidCategory {
+        VARCHAR mid_category_code PK "중분류 코드"
+        VARCHAR main_category_code FK "대분류 코드"
+        VARCHAR name "중분류명"
     }
 
-    Category {
-        BIGINT category_id PK "분류코드 ID"
-        VARCHAR main_category "대분류"
-        VARCHAR mid_category "중분류"
-        VARCHAR sub_category "소분류"
+    SubCategory {
+        VARCHAR sub_category_code PK "소분류 코드"
+        VARCHAR mid_category_code FK "중분류 코드"
+        VARCHAR name "소분류명"
     }
 
-    Document ||--|| AccountingSlip : "회계전표 정보"
-    Document ||--|| EBook : "전자책 정보"
-    Document }o--|| Category : "분류 코드"
+    Document ||--o{ MainCategory : "대분류 참조"
+    Document ||--o{ MidCategory : "중분류 참조"
+    Document ||--o{ SubCategory : "소분류 참조"
+
+    MidCategory }o--|| MainCategory : "대분류 소속"
+    SubCategory }o--|| MidCategory : "중분류 소속"
+
